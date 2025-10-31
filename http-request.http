@@ -1,4 +1,15 @@
 ###
+POST http://localhost:8081/add
+Content-Type: application/json
+
+{
+  "email": "aa@temp.com",
+  "firstName": "alexandr",
+  "lastName": "alexandrov",
+  "age": 20
+}
+
+###
 GET http://localhost:8081/all
 
 ###

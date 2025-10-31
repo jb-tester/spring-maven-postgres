@@ -1,10 +1,7 @@
 package com.example.springmavenpostgres;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,6 +15,11 @@ public class PersonController {
         this.personService = personService;
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<Person> addPerson(@RequestBody Person person) {
+        Person savedPerson = personService.savePerson(person);
+        return ResponseEntity.ok().body(savedPerson);
+    }
     @GetMapping("/all")
     public ResponseEntity<List<Person>> getAll() {
 

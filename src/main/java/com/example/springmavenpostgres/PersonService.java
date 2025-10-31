@@ -1,6 +1,7 @@
 package com.example.springmavenpostgres;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +14,11 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
+    @Transactional
+    public Person savePerson(Person person) {
+         personRepository.save(person);
+         return person;
+    }
     public List<Person> getAllPerson() {
         Iterable<Person> all = personRepository.findAll();
         return (List<Person>) all;
