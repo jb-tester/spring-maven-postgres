@@ -1,4 +1,14 @@
 ###
-GET http://localhost:8080/
+GET http://localhost:8081/all
+
+###
+GET http://localhost:8081/native/all
+
+###
+GET http://localhost:8081/byAge/18
+
+###
+GET http://localhost:8081/native/byAge/18
+
 
 ###
